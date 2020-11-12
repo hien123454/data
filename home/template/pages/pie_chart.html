@@ -1,0 +1,231 @@
+{% extends "pages/base.html" %}
+{% block title %}
+Pie Chart
+{% endblock %}
+    
+<script>
+    {% block jquery %}
+        var endpoint = '/api/chart/data/'
+        $.ajax({
+            method: "GET",
+            url: endpoint,
+            success: function(data) {
+                console.log(data)
+                console.log(data.customers * 234)
+                setChart()
+            },
+            error: function(error_data) {
+                console.log("error")
+                console.log(error_data)
+            }
+        })
+       
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: {{x1990|safe}} ,
+        datasets: [{
+            data: {{y1990|safe}},
+            label: 'Biểu đồ thể hiện tương quan dân số các khu vực 1980',
+            
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(123, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(123, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var hien = document.getElementById('Chart2').getContext('2d');
+var Chart2 = new Chart(hien, {
+    type: 'pie',
+    data: {
+        labels: {{x1980|safe}} ,
+        datasets: [{
+            data: {{y1980|safe}},
+            label: 'Biểu đồ Thể hiện tương quan dân số các khu vực 1990',
+            
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(123, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(123, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var hien1 = document.getElementById('Chart3').getContext('2d');
+var Chart3 = new Chart(hien1, {
+    type: 'pie',
+    data: {
+        labels: {{x2000|safe}} ,
+        datasets: [{
+            data: {{y2000|safe}},
+            label: 'Biểu đồ thể hiện tương quan dân số các khu vực 1980',
+            
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(123, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(123, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var hien2 = document.getElementById('Chart4').getContext('2d');
+var Chart4 = new Chart(hien2, {
+    type: 'pie',
+    data: {
+        labels: {{x2010|safe}} ,
+        datasets: [{
+            data: {{y2010|safe}},
+            label: 'Biểu đồ Thể hiện tương quan dân số các khu vực 1990',
+            
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(123, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(123, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+    {%endblock%}
+</script>
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ul style="list-style-type: none;">
+                <li>
+                    <a href="/bar_chart">Bar</a>
+                </li>
+                <li>
+                    <a href="/scatter_chart">Scatter</a>
+                </li>
+                <li>
+                    <a href="/line_chart">Line</a>
+                </li>
+                <li><a href="/pie_chart">Pie</a></li>
+                <li>
+                    <a href="/gant_chart">gantt</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-6" url-endpoint='{% url "api-data" %}' style="position: relative; width:45vw">
+            
+            <canvas id="myChart" width="400" height="400"></canvas>
+            
+        </div>
+        <div class="col-sm-6" url-endpoint='{% url "api-data" %}' style="position: relative; width:45vw">
+            
+            
+            <canvas id="Chart2" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <div class="row"> 
+            <div class="col-sm-6" url-endpoint='{% url "api-data" %}' style="position: relative; width:45vw">
+            
+            <canvas id="Chart3" width="400" height="400"></canvas>
+            
+        </div>
+        <div class="col-sm-6" url-endpoint='{% url "api-data" %}' style="position: relative; width:45vw">
+            
+            
+            <canvas id="Chart4" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

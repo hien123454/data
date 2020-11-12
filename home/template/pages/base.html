@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'pages/base/css.html' %}
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        #menu{
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'pages/base/js.html' %}
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-sm-12">
+                
+                <center>
+                    <ul >
+                        <li  style="display: inline-block; ">
+                            <a href="/home">HOMEPAGE</a>
+                        </li>
+                        <li id="menu" style="display: inline-block;">
+                            <a href="/simplechart">SIMPLE CHART</a>
+                        </li>
+                        <li id="menu" style="display: inline-block;">
+                            <a href="/data_analysis">DATA ANALYSIS</a>
+                        </li>
+                    </ul>
+                    <hr>
+                </center>
+            </div>
+        </div>
+        
+    </div>
+   {% block content %}
+  
+   {% endblock %}
+
+  <scrip>
+      $(document).ready(function(){
+          {% block jquery  %}
+          {% endblock  %}
+      })
+  </scrip>
+
+</body>
+</html>
